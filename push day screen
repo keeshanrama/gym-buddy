@@ -1,0 +1,278 @@
+
+import SwiftUI
+import UIKit
+
+struct Workoutdetailview: View {
+    // 1 = Bench , 2 = Incline , 3 = Decline, 4 =  Cable Fly
+    
+    
+    @State var selection1: String = "1"
+    @State var selection2: String = "1"
+    @State var selection3: String = "1"
+    @State var selection4: String = "1"
+    @State var repselection1: String = "1"
+    @State var repselection2: String = "1"
+    @State var repselection3: String = "1"
+    @State var repselection4: String = "1"
+    @State var weightselection1: String = "60"
+    @State var weightselection2: String = "60"
+    @State var weightselection3: String = "60"
+    @State var weightselection4: String = "15"
+    
+    
+    
+    
+    
+    var body: some View {
+        Text("Push Day")
+            .shadow(radius: 5)
+            .font(.largeTitle)
+     
+
+            List {
+                HStack {
+                    Text("Incline Press")
+                        .font(.title2)
+                    Text("|")
+                        .font(.title)
+                    Text("Sets:")
+                    Text(selection2)
+                    Text("|")
+                        .font(.title)
+                    Text("Reps:")
+                    Text(repselection2)
+                    Text("|")
+                        .font(.title)
+                    Text("Weight:")
+                    Text(weightselection2)
+                }
+                    
+                    HStack {
+                        Picker(
+                            selection: $selection2,
+                            label: Text("Sets"),
+                            content: {
+                            Text("1").tag("1")
+                            Text("2").tag("2")
+                            Text("3").tag("3")
+                            Text("4").tag("4")
+                            Text("5").tag("5")
+                            Text("6").tag("6")
+                            Text("7").tag("7")
+                            Text("8").tag("8")
+                            
+                        })
+                            .pickerStyle(MenuPickerStyle())
+                        Picker(
+                            selection: $repselection2,
+                            label: Text("Reps"),
+                            content: {
+                                ForEach(1..<31) { number in
+                                    Text("\(number)")
+                                        .tag("\(number)")
+                                }
+                            }
+                        )
+                            .pickerStyle(MenuPickerStyle())
+                        Picker(
+                            selection: $weightselection2,
+                            label: Text("Weight"),
+                            content: {
+                                ForEach(60..<151) { number in
+                                    Text("\(number)")
+                                        .tag("\(number)")
+                            }
+                    })
+                            .pickerStyle(MenuPickerStyle())
+                
+            }
+            }
+        Spacer()
+        
+            List {
+                HStack {
+                    Text("Decline Press")
+                        .font(.title2)
+                    Text("|")
+                        .font(.title)
+                    Text("Sets:")
+                    Text(selection3)
+                    Text("|")
+                        .font(.title)
+                    Text("Reps:")
+                    Text(repselection3)
+                    Text("|")
+                        .font(.title)
+                    Text("Weight:")
+                    Text(weightselection3)
+                }
+                    HStack {
+                        Picker(
+                            selection: $selection3,
+                            label: Text("Sets"),
+                            content: {
+                            Text("1").tag("1")
+                            Text("2").tag("2")
+                            Text("3").tag("3")
+                            Text("4").tag("4")
+                            Text("5").tag("5")
+                            Text("6").tag("6")
+                            Text("7").tag("7")
+                            Text("8").tag("8")
+                            
+                        })
+                            .pickerStyle(MenuPickerStyle())
+                        Picker(
+                            selection: $repselection3,
+                            label: Text("Reps"),
+                            content: {
+                                ForEach(1..<31) { number in
+                                    Text("\(number)")
+                                        .tag("\(number)")
+                                }
+                            }
+                        )
+                            .pickerStyle(MenuPickerStyle())
+                        Picker(
+                            selection: $weightselection3,
+                            label: Text("Weight"),
+                            content: {
+                                ForEach(60..<151) { number in
+                                    Text("\(number)")
+                                        .tag("\(number)")
+                            }
+                    })
+                            .pickerStyle(MenuPickerStyle())
+                    
+            }
+            }
+        
+        Spacer()
+        
+            List {
+                HStack {
+                    Text("Bench Press")
+                        .font(.title2)
+
+                    Text("|")
+                        .font(.title)
+                    Text("Sets:")
+                    Text(selection1)
+                    Text("|")
+                        .font(.title)
+                    Text("Reps:")
+                    Text(repselection1)
+                    Text("|")
+                        .font(.title)
+                    Text("Weight:")
+                    Text(weightselection1)
+                }
+                    HStack {
+                        Picker(
+                            selection: $selection1,
+                            label: Text("Sets"),
+                            content: {
+                            Text("1").tag("1")
+                            Text("2").tag("2")
+                            Text("3").tag("3")
+                            Text("4").tag("4")
+                            Text("5").tag("5")
+                            Text("6").tag("6")
+                            Text("7").tag("7")
+                            Text("8").tag("8")
+                        })
+                            .pickerStyle(MenuPickerStyle())
+                        Picker(
+                            selection: $repselection1,
+                            label: Text("Reps"),
+                            content: {
+                                ForEach(1..<31) { number in
+                                    Text("\(number)")
+                                        .tag("\(number)")
+                                }
+                            }
+                        )
+                            .pickerStyle(MenuPickerStyle())
+                        Picker(
+                            selection: $weightselection1,
+                            label: Text("Weight"),
+                            content: {
+                                ForEach(60..<101) { number in
+                                    Text("\(number)")
+                                        .tag("\(number)")
+                            }
+                    })
+                            .pickerStyle(MenuPickerStyle())
+                }
+                }
+        Spacer()
+        
+            List {
+                HStack {
+                    Text("Cable Fly")
+                        .font(.title2)
+
+                    Text("|")
+                        .font(.title)
+                    Text("Sets:")
+                    Text(selection4)
+                    Text("|")
+                        .font(.title)
+                    Text("Reps:")
+                    Text(repselection4)
+                    Text("|")
+                        .font(.title)
+                    Text("Weight:")
+                    Text(weightselection4)
+                }
+                    HStack {
+                        Picker(
+                            selection: $selection4,
+                            label: Text("Sets"),
+                            content: {
+                            Text("1").tag("1")
+                            Text("2").tag("2")
+                            Text("3").tag("3")
+                            Text("4").tag("4")
+                            Text("5").tag("5")
+                            Text("6").tag("6")
+                            Text("7").tag("7")
+                            Text("8").tag("8")
+                        })
+                            .pickerStyle(MenuPickerStyle())
+                        Picker(
+                            selection: $repselection4,
+                            label: Text("Reps"),
+                            content: {
+                                ForEach(1..<31) { number in
+                                    Text("\(number)")
+                                        .tag("\(number)")
+                                }
+                            }
+                        )
+                            .pickerStyle(MenuPickerStyle())
+                        Picker(
+                            selection: $weightselection4,
+                            label: Text("Weight"),
+                            content: {
+                                ForEach(60..<150) { number in
+                                    Text("\(number)")
+                                        .tag("\(number)")
+                            }
+                    })
+                            .pickerStyle(MenuPickerStyle())
+                }
+                }
+      
+        Spacer()
+       
+    }
+    }
+
+struct Workoutdetailview_Previews: PreviewProvider {
+    static var previews: some View {
+        Workoutdetailview()
+    }
+}
+
+    
