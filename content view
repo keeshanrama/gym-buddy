@@ -1,0 +1,97 @@
+//
+//  ContentView.swift
+//  Gym Buddy
+//
+//  Created by Keeshan Rama on 8/19/21.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        
+        NavigationView {
+                    VStack {
+                        Text("Gym Buddy")
+                            .font(.largeTitle)
+                            .fontWeight(.heavy)
+                            .foregroundColor(Color.black)
+                            .shadow(radius: 5)
+                            .multilineTextAlignment(.center)
+                            .padding(.bottom)
+                            .offset(x:-10)
+                        Spacer()
+                        HStack {
+                            NavigationLink("Push", destination: Workoutdetailview())
+                                .font(.title)
+                                .foregroundColor(Color.black)
+                                .shadow(radius: 5)
+                                .frame(width: 100, height:
+                                    /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+                            Image("bench")
+                                .resizable()
+                                .frame(width:200,height:200)
+                                .cornerRadius(20)
+                                .shadow(radius: 10)
+                                .padding(.all, 20)
+                            
+                        }
+                        Spacer()
+                        HStack {
+                            NavigationLink("Pull", destination: PullScreen())
+                                .font(.title)
+                                .foregroundColor(Color.black)
+                                .shadow(radius: 5)
+                                .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+                            Image("deadlift")
+                                .resizable()
+                                .frame(width:200,height:200)
+                                .cornerRadius(20)
+                                .shadow(radius: 10)
+                                .padding(.all, 20.0)
+                        }
+                        Spacer()
+                        HStack {
+                            NavigationLink("Legs", destination: LegsScreen())
+                                .font(.title)
+                                .foregroundColor(Color.black)
+                                .shadow(radius: 5)
+                                .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+                            Image("squat")
+                                .resizable()
+                                .frame(width:200,height:200)
+                                .cornerRadius(20)
+                                .shadow(radius: 10)
+                                .padding(.all, 20)
+
+                        }
+                        Spacer()
+                    }
+                    .padding(.leading)
+                }
+                
+            }
+    }
+
+                            
+            
+     
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            ContentView()
+            
+        }
+        
+    }
+}
+
+struct Workout: Identifiable {
+    var id = UUID()
+    var type: String
+    var routine: [String]
+    var image: String
+}
+
+
